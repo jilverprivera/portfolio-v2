@@ -1,26 +1,13 @@
-# dependencies
 /node_modules
 .next
+.vercel
 .vscode
 
-# testing
-/coverage
-
-# next.js
-/.next/
-
-# production
 /build
 
-# debug
-npm-debug.log*
-
-# local env files
 .env*.local
 .env
 
-# vercel
-.vercel
+package-lock.json
 
-# typescript
 *.tsbuildinfo

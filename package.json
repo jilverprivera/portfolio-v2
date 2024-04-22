@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint  --fix . --ext .js,.ts,.tsx"
+    "lint": "eslint  --fix . --ext .js,.ts,.tsx",
+    "co": "sui-mono commit"
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.39",
