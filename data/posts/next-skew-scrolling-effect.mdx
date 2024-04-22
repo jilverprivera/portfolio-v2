@@ -1,0 +1,143 @@
+---
+title: 'Skew scrolling effect with Framer Motion in NextJS'
+description: 'I recently started my final project of my electronic engineering degree, in this case I needed to control the pulse of a sine wave (AC)...'
+finished: true
+publishedAt: 'Mar 28, 2022'
+coverImage: '/static/posts/Digital_dimmer/dimmer_zero_cross.png'
+tags: ['Next.js', 'Programming']
+---
+
+I recently started my final project of my electronic engineering degree, in this case I needed to control
+the pulse of a sine wave (AC) in order to control a high power light bulb.
+
+Searching the internet I found many ways to do it, however, most of them were already prefabricated in a
+card, or with components that are not commercialized in my country, so I thought, **why not do it from scratch?**
+
+Here I give you the circuit and an example code.
+
+## Zero cross detection
+
+The zero crossing detector indicates when the sine wave crosses ground (GND).
+
+We use zero-crossing detection to establish at what frequency the wave passes through our microcontroller
+(usually 50Hz or 60Hz), and also emit a pulse when a voltage signal passes through 0V.
+
+## Digital dimmer
+
+So, every time the zero crossing pulse passes through 0V, it emits a signal that calls an interrupt in the microcontroller,
+This interruption activates and deactivates for a short time the LED inside the MOC 3020 generating pulses and activating the gate of the Triac BTA 16.
+
+We have to take into account that the zero crossing occurs in the middle of the signal, so, when applying the period formula we have to divide it by 2.
+
+By example: T = 1/60 = 16.66 ms --> T/2 = 8.33 ms.
+
+## Connection to Arduino
+
+Here are all the necessary connections to make a digital dimmer.
+
+## Code
+
+```js
+// Importations
+import { motion, useScroll } from 'framer-motion'
+
+const { scrollY } = useScroll()
+
+const skewConfig = {
+  ease: 0.1,
+  current: 0,
+  previous: 0,
+  rounded: 0
+}
+
+// Getting the total height of the body.
+const setBodyHeight = () => {
+  if (app.current != null) {
+    document.body.style.height = `${
+      app.current.getBoundingClientRect().height
+    }px`
+  }
+}
+
+const skewScrolling = () => {
+  if (app.current != null) {
+    skewConfig.current = scrollY.get()
+    skewConfig.previous +=
+      (skewConfig.current - skewConfig.previous) * skewConfig.ease
+    skewConfig.rounded = Math.round(skewConfig.previous * 100) / 100
+    const difference = skewConfig.current - skewConfig.rounded
+    const acceleration = difference / 1920
+    const velocity = +acceleration
+    const skew = velocity * 30
+    app.current.style.transform = `translate3d(0, -${skewConfig.rounded}px, 0) skewY(${skew}deg)`
+    requestAnimationFrame(() => {
+      skewScrolling()
+    })
+  }
+}
+
+useEffect(() => {
+  setBodyHeight()
+  window.addEventListener('resize', setBodyHeight, { passive: true })
+  return () => {
+    window.removeEventListener('resize', setBodyHeight)
+  }
+}, [])
+
+useEffect(() => {
+  requestAnimationFrame(() => {
+    skewScrolling()
+  })
+}, [])
+```
+
+### JSX Component
+
+```jsx
+<motion.main
+  ref={app}
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: -0 }}
+  exit={{ opacity: 0, y: -20 }}
+  transition={{ duration: 0.25 }}
+  className="fixed top-0 left-0 w-full min-h-screen overflow-hidden bg-neutral-100"
+>
+  {children}
+</motion.main>
+```
+
+```
+// export const getAllFilesMetadata = async (type: string, locale?: string) => {
+//   const files = await getFiles(type);
+//   // console.log(files);
+
+//   const filesToReturn = files.reduce((accFiles: any, slug: string) => {
+//     const mdxSource = fs.readFileSync(
+//       path.join(root, 'data', type, slug),
+//       'utf8'
+//     );
+//     const { data, content } = matter(mdxSource);
+//     return [
+//       {
+//         ...(data as Frontmatter),
+//         slug: slug.replace('.mdx', '').replace('en.', '').replace('es.', ''),
+//         readingTime: readingTime(content),
+//       },
+//       ...accFiles,
+//     ];
+//   }, []);
+
+//   // console.log(filesToReturn);
+
+//   return filesToReturn
+//     .filter((file: Frontmatter) => file.isPublished)
+//     .filter((file: Frontmatter) => file.locale === locale)
+//     .sort(
+//       (a: Frontmatter, b: Frontmatter) =>
+//         Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+//     );
+
+// };
+```
+
+Use the `MDXLayoutRenderer`

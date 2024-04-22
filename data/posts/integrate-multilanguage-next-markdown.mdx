@@ -1,0 +1,81 @@
+---
+title: 'Multi languages support with NextJS and Markdown'
+description: 'The dimmer and the famous zero crossing that allows us to control a high power electronic circuit.'
+finished: true
+publishedAt: 'March 29, 2022'
+tags: ['Next.js', 'Markdown', 'Programming']
+---
+
+Next English I recently started my final project of my electronic engineering degree, in this case I needed to control
+the pulse of a sine wave (AC) in order to control a high power light bulb.
+
+Searching the internet I found many ways to do it, however, most of them were already prefabricated in a
+card, or with components that are not commercialized in my country, so I thought, **why not do it from scratch?**
+
+Here I give you the circuit and an example code.
+
+## Zero cross detection
+
+The zero crossing detector indicates when the sine wave crosses ground (GND).
+
+We use zero-crossing detection to establish at what frequency the wave passes through our microcontroller
+(usually 50Hz or 60Hz), and also emit a pulse when a voltage signal passes through 0V.
+
+## Digital dimmer
+
+So, every time the zero crossing pulse passes through 0V, it emits a signal that calls an interrupt in the microcontroller,
+This interruption activates and deactivates for a short time the LED inside the MOC 3020 generating pulses and activating the gate of the Triac BTA 16.
+
+We have to take into account that the zero crossing occurs in the middle of the signal, so, when applying the period formula we have to divide it by 2.
+
+By example: T = 1/60 = 16.66 ms --> T/2 = 8.33 ms.
+
+## Connection to Arduino
+
+Here are all the necessary connections to make a digital dimmer.
+
+## Code
+
+```c++
+int Zero_Cross_Pin = 2;
+int Firing_Pin = 3;
+
+String Input_String = "";
+bool String_Completedd = false;
+int Max_Firing_Delay = 7400;
+int Min_Firing_Delay = 1350;
+int Interval_Delay = 833;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(Firing_Pin, OUTPUT);
+  attachInterrupt(digitalPinToInterrupt(Zero_Cross_Pin), ZERO_CROSS_ISR, RISING);
+}
+
+void loop() {
+   if (String_Completed) {
+    int brightness = constrain(Input_String.toInt(), 0 , 100);
+    Firing_Delay = map(brillo, 0, 100, Max_Firing_Delay, Min_Firing_Delay);
+    Serial.println("Bulb brightness intensity: " + (String)brightness + "%");
+    Input_String = "";
+    String_Completed = false;
+  }
+}
+
+void serialEvent() {
+  while (Serial.available() > 0) {
+    char inChar = (char)Serial.read();
+    if (inChar == '\n')
+      String_Completed = true;
+    else
+      Input_String += inChar;
+  }
+}
+
+void ZERO_CROSS_ISR() {
+  delayMicroseconds(Firing_Delay);
+  digitalWrite(Firing_Pin, HIGH);
+  delayMicroseconds(Interval_Delay);
+  digitalWrite(Firing_Pin, LOW);
+}
+```

@@ -1,0 +1,26 @@
+# dependencies
+/node_modules
+.next
+.vscode
+
+# testing
+/coverage
+
+# next.js
+/.next/
+
+# production
+/build
+
+# debug
+npm-debug.log*
+
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo

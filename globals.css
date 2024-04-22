@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+@layer utilities {
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  *::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    background: var(--color-primary);
+  }
+}
+
+@layer base {
+  :root {
+    --color-primary: #1f1d2b;
+    --color-primary-variant-1: #3c394d;
+    --color-primary-variant-2: #9694a3;
+    --color-secondary: #6656fb;
+  }
+
+  .noise {
+    animation: noise-animation 0.25s infinite;
+    background-image: url('/static/img/noise.png');
+    background-repeat: repeat;
+    inset: -50%;
+    height: 200vh;
+    width: 200%;
+    pointer-events: none;
+    position: fixed;
+    z-index: 999999;
+  }
+}
+
+@keyframes noise-animation {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  10% {
+    transform: translate3d(-5%, -5%, 0);
+  }
+  20% {
+    transform: translate3d(-10%, 5%, 0);
+  }
+  30% {
+    transform: translate3d(5%, -10%, 0);
+  }
+  40% {
+    transform: translate3d(-5%, 15%, 0);
+  }
+  50% {
+    transform: translate3d(-10%, 5%, 0);
+  }
+  60% {
+    transform: translate3d(15%, 0);
+  }
+  70% {
+    transform: translate3d(15%, 15%, 0);
+  }
+  80% {
+    transform: translate3d(10%, 5%, 0);
+  }
+  90% {
+    transform: translate3d(5%, 10%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

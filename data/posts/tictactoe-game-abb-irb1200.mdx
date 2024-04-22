@@ -1,0 +1,56 @@
+---
+title: 'Implement TicTacToe game with ABB IRB1200.'
+description: 'How to develop a wireless communication protocol at the speed of light.'
+finished: true
+publishedAt: 'Nov 26, 2022'
+tags: ['ABB', 'Engineering', 'Robotstudio', 'Programming']
+---
+
+A communication protocol could be defined as a set of standardized rules for representation, signaling, authentication and error detection needed to send information over a communication channel.
+
+While communication protocols for digital communication have features designed to ensure reliable data exchange over an imperfect communication channel, communication protocols designed for remote controls are based on two fundamental points:
+
+## Line code
+
+It's a sequence of pulses and spaces that can use any of the digital modulation forms to form the signal x(t), however, the following values must be taken into account:
+
+- The pulse duration.
+- The duration of the space (between two consecutive pulses).
+- The position of the pulse within a bit period.
+- The edges of the signal.
+
+## Plot structure
+
+Here you specify characteristics such as:
+
+- Number of bytes.
+- Order of transmission of the bytes within the frame.
+- Order of transmission of bits within a byte.
+- Address and data bytes.
+- AGC (Automatic Ganancy Control)
+- Bit time.
+
+Now,NEC's IR transmission protocol uses pulse distance coding (PCM) for the message bits. Each pulse burst has a duration of 562.5µs, at a carrier frequency of 38 kHz (26.3µs).
+
+Each logic bit is transmitted as follows:
+
+Logic 0' - a burst of 562.5µs pulses followed by a spacing of 562.5µs, with a total transmission time of 1.125ms.
+
+Logic '1' - a burst of 562.5µs pulses followed by a spacing of 1.6875 ms, with a total transmission time of 1.125ms.
+spacing of 1.6875 ms, with a total transmission time of 2.25 ms
+
+So, the transmitted message consists of the following, in order.
+
+- A 9 ms AGC burst. (16 times the length of the pulse burst used for a logic data bit).
+- A 4.5 ms gap.
+- The 8-bit address of the receiving device.
+- The 8-bit logical inverse of the address.
+- The 8-bit command.
+- The 8-bit logical inverse of the command.
+- A final burst of 562.5µs pulses to indicate the end of the transmission of the message.
+
+![Nec Plot](/static/posts/NEC_protocol/NEC_Plot.png)
+
+A command is transmitted only once, although the key of the remote control remains pressed (normally about 40 ms after the burst of pulses that meant the end of the message). Every 108 ms a repetition code is transmitted while the key remains pressed.
+
+![Nec Plot](/static/posts/NEC_protocol/NEC_Repeat_Plot.png)
