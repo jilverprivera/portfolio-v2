@@ -12,24 +12,18 @@ export const Background = () => {
             products with some awesome people.
           </p> */}
           <p>
-            I finished my studies at the{' '}
-            <span className="font-bold">
-              Universidad de Investigación y Desarrollo
-            </span>{' '}
-            after completing 5 years in Electronic Engineering which allowed me
-            to participate and represent my university and my country in
-            robotics competitions.
+            I finished my studies at the <span className="font-bold">Universidad de Investigación y Desarrollo</span>{' '}
+            after completing 5 years in Electronic Engineering which allowed me to participate and represent my
+            university and my country in robotics competitions.
           </p>
           <p>
-            As a software developer, I always like to try to link engineering,
-            design and long-term scalability. My goal is to always create
-            applications that are efficient and at the same time deliver
-            engaging and seamless user experiences.
+            As a software developer, I always like to try to link engineering, design and long-term scalability. My goal
+            is to always create applications that are efficient and at the same time deliver engaging and seamless user
+            experiences.
           </p>
           <p>
-            When I&apos;m not in front of a screen, I&apos;m probably
-            exercising, reading a book, watching a series, walking my dogs or
-            crossing another item off my bucket list.
+            When I&apos;m not in front of a screen, I&apos;m probably exercising, reading a book, watching a series,
+            walking my dogs or crossing another item off my bucket list.
           </p>
         </div>
       </div>

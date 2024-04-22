@@ -1,11 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent
-} from 'framer-motion'
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion'
 
 type props = {
   navItems: {

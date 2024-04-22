@@ -53,17 +53,14 @@ const skewConfig = {
 // Getting the total height of the body.
 const setBodyHeight = () => {
   if (app.current != null) {
-    document.body.style.height = `${
-      app.current.getBoundingClientRect().height
-    }px`
+    document.body.style.height = `${app.current.getBoundingClientRect().height}px`
   }
 }
 
 const skewScrolling = () => {
   if (app.current != null) {
     skewConfig.current = scrollY.get()
-    skewConfig.previous +=
-      (skewConfig.current - skewConfig.previous) * skewConfig.ease
+    skewConfig.previous += (skewConfig.current - skewConfig.previous) * skewConfig.ease
     skewConfig.rounded = Math.round(skewConfig.previous * 100) / 100
     const difference = skewConfig.current - skewConfig.rounded
     const acceleration = difference / 1920

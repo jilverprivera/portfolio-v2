@@ -23,9 +23,6 @@ module.exports = {
       screens: { '3xl': '1920px', ...screens }
     }
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('tailwindcss-text-stroke')
-  ]
+  plugins: [require('@tailwindcss/typography'), require('tailwindcss-text-stroke')]
 }
 

@@ -9,9 +9,7 @@ export const Hero = ({ works }: { works: FrontMatter[] }) => {
     <section className="max-w-screen-2xl w-11/12 mx-auto min-h-screen flex items-center justify-center">
       <div className="h-[calc(100vh-96px)] my-12 rounded-2xl border border-primary-variant-1 text-primary-variant-2 grid grid-cols-5 grid-rows-6 overflow-hidden">
         <div className="col-span-2 row-span-3 w-full p-8 border-r border-b border-primary-variant-1">
-          <div className="w-16 h-16 border border-primary-variant-1 rounded-2xl">
-            {/* Logo */}
-          </div>
+          <div className="w-16 h-16 border border-primary-variant-1 rounded-2xl">{/* Logo */}</div>
         </div>
 
         <div className="col-span-3 row-span-6 grid grid-rows-6 relative border-b border-primary-variant-1">
@@ -19,24 +17,18 @@ export const Hero = ({ works }: { works: FrontMatter[] }) => {
             <div className="flex items-center justify-between space-x-8">
               {PAGES.map(({ link, name }, i) => (
                 <Link href={link} key={i}>
-                  <a className="text-base hover:text-neutral-200 duration-150">
-                    {name}
-                  </a>
+                  <a className="text-base hover:text-neutral-200 duration-150">{name}</a>
                 </Link>
               ))}
             </div>
             <div>
-              <button className=" bg-white text-primary px-8 py-4 rounded-xl">
-                Resume
-              </button>
+              <button className=" bg-white text-primary px-8 py-4 rounded-xl">Resume</button>
             </div>
           </div>
 
           <div className="w-full row-span-5 grid grid-cols-3 gap-8">
             <div className="w-full p-8 space-y-4">
-              <h4 className="uppercase text-lg font-semibold tracking-wider">
-                Works
-              </h4>
+              <h4 className="uppercase text-lg font-semibold tracking-wider">Works</h4>
               <ul className="space-y-2">
                 {works.map((work) => (
                   <li key={work.slug}>
@@ -52,9 +44,7 @@ export const Hero = ({ works }: { works: FrontMatter[] }) => {
             </div>
 
             <div className="w-full p-8 space-y-4">
-              <h4 className="uppercase text-lg font-semibold tracking-wider">
-                networks
-              </h4>
+              <h4 className="uppercase text-lg font-semibold tracking-wider">networks</h4>
               <ul className="space-y-2">
                 {NETWORKS.map((network, i) => (
                   <li key={i}>
@@ -79,12 +69,10 @@ export const Hero = ({ works }: { works: FrontMatter[] }) => {
         <div className="col-span-2 row-span-3  w-full p-8 border-r border-primary-variant-1  space-y-4">
           <div className="w-32 h-32 border border-primary-variant-1 rounded-2xl"></div>
 
-          <h3 className="text-6xl font-tomorrow text-primary-variant-2">
-            Hey there!{' '}
-          </h3>
+          <h3 className="text-6xl font-tomorrow text-primary-variant-2">Hey there! </h3>
           <p className="text-xl font-light leading-relaxed">
-            I&apos;m Jilver Pacheco, a software developer & electronic engineer
-            passionate about crafting complete digital solutions.
+            I&apos;m Jilver Pacheco, a software developer & electronic engineer passionate about crafting complete
+            digital solutions.
           </p>
         </div>
       </div>

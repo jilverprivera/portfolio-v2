@@ -13,10 +13,7 @@ export const getFiles = async (type: string) => {
 }
 
 export const getFileBySlug = async (type: string, slug: string) => {
-  const mdxSource = fs.readFileSync(
-    path.join(root, 'data', type, `${slug}.mdx`),
-    'utf8'
-  )
+  const mdxSource = fs.readFileSync(path.join(root, 'data', type, `${slug}.mdx`), 'utf8')
   const { data, content } = matter(mdxSource)
   const source = await serialize(content, {
     mdxOptions: { rehypePlugins: [rehypeHighlight] }
@@ -31,10 +28,7 @@ export const getFileBySlug = async (type: string, slug: string) => {
 export const getAllFilesMetadata = async (type: string) => {
   const files = await getFiles(type)
   const filesToReturn = files.reduce((accFiles: any, slug) => {
-    const mdxSource = fs.readFileSync(
-      path.join(root, 'data', type, slug),
-      'utf8'
-    )
+    const mdxSource = fs.readFileSync(path.join(root, 'data', type, slug), 'utf8')
     const { data, content } = matter(mdxSource)
     return [
       {
@@ -46,8 +40,7 @@ export const getAllFilesMetadata = async (type: string) => {
     ]
   }, [])
   return filesToReturn.sort(
-    (a: FrontMatter, b: FrontMatter) =>
-      Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+    (a: FrontMatter, b: FrontMatter) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
   )
 }
 

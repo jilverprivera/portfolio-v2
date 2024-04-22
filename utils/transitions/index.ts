@@ -1,5 +1,3 @@
-// EASE: [0.83, 0, 0.17, 1]
-
 export const PAGE_TRANSITION_PROPS = {
   DURATION: 0.8,
   EASE: [0.6, 0.01, -0.05, 0.95]

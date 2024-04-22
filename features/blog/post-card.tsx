@@ -6,10 +6,7 @@ type props = {
   index: number
 }
 
-export const PostCard = ({
-  post: { slug, title, tags, description, readingTime },
-  index
-}: props) => {
+export const PostCard = ({ post: { slug, title, tags, description, readingTime }, index }: props) => {
   return (
     <article
       className={`w-full ${
@@ -35,15 +32,11 @@ export const PostCard = ({
                   </span>
                 ))}
             </div>
-            <h3 className="text-xl font-medium text-primary-variant-2 group-hover:text-white duration-200">
-              {title}
-            </h3>
+            <h3 className="text-xl font-medium text-primary-variant-2 group-hover:text-white duration-200">{title}</h3>
             <p className="text-sm text-primary-variant-2 group-hover:text-white group-hover:duration-200 leading-normal h-20">
               {description}
             </p>
-            <p className="text-sm text-primary-variant-2 group-hover:text-white duration-200">
-              {readingTime?.text}
-            </p>
+            <p className="text-sm text-primary-variant-2 group-hover:text-white duration-200">{readingTime?.text}</p>
           </div>
         </a>
       </Link>

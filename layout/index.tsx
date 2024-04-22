@@ -21,7 +21,6 @@ export const Layout = ({ children, metadata }: ILayout) => {
       >
         {children}
       </motion.main>
-    
     </Fragment>
   )
 }

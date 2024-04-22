@@ -1,7 +1,6 @@
-import { useState } from 'react'
 import { GetStaticProps, NextPage } from 'next'
 import { Layout } from 'layout'
-import { PageTitle } from 'components/ui/shared'
+import { PageTitle } from 'components/ui'
 import { getAllFilesMetadata } from 'lib/mdx'
 import { FrontMatter, PageProps } from 'interfaces'
 import { Portfolio } from 'features/portfolio'

@@ -1,2 +1,3 @@
-export * from './post-card';
-export * from './post-search';
+export * from './post-card'
+export * from './post-search'
+
