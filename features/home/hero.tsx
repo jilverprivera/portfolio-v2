@@ -71,8 +71,7 @@ export const Hero = ({ works }: { works: FrontMatter[] }) => {
 
           <h3 className="text-6xl font-tomorrow text-primary-variant-2">Hey there! </h3>
           <p className="text-xl font-light leading-relaxed">
-            I&apos;m Jilver Pacheco, a software developer & electronic engineer passionate about crafting complete
-            digital solutions.
+            I&apos;m Jilver Pacheco, a software developer crafting complete digital solutions at Conversion.
           </p>
         </div>
       </div>

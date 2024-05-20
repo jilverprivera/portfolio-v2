@@ -6,7 +6,7 @@ export const Footer = (): JSX.Element => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   return (
     <footer className="w-full py-12">
-      <div className="max-w-screen-2xl w-11/12 mx-auto grid grid-cols-2 gap-24">
+      <div className="max-w-screen-xl w-11/12 mx-auto grid grid-cols-2 gap-24">
         <p className="text-7xl text-neutral-300">Find me on</p>
         <div className="grid">
           {NETWORKS.map((network, i) => (

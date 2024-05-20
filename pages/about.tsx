@@ -1,5 +1,5 @@
 import { Layout } from 'layout'
-import { PageTitle } from 'components/ui/shared'
+import { PageTitle } from 'components/ui'
 import { Awards, Experience } from 'features/about'
 
 const About = () => {

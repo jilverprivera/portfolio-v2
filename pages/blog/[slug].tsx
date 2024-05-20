@@ -24,10 +24,7 @@ export async function getStaticProps({ params }: IStaticProps) {
   const prev = posts[postIndex + 1] || null
   const next = posts[postIndex - 1] || null
 
-  const { source, frontmatter, readingTime } = await getFileBySlug(
-    'posts',
-    slug
-  )
+  const { source, frontmatter, readingTime } = await getFileBySlug('posts', slug)
   return {
     props: {
       source,
@@ -41,13 +38,7 @@ export async function getStaticProps({ params }: IStaticProps) {
   }
 }
 
-const Post: NextPage<ISlugProps> = ({
-  source,
-  frontmatter,
-  readingTime,
-  prev,
-  next
-}) => {
+const Post: NextPage<ISlugProps> = ({ source, frontmatter, readingTime, prev, next }) => {
   const { publishedAt, title, slug, description, tags } = frontmatter
 
   return (
@@ -59,11 +50,9 @@ const Post: NextPage<ISlugProps> = ({
         date: publishedAt
       }}
     >
-      <section className="max-w-screen-3xl mx-auto w-11/12 flex flex-col items-center justify-center pt-32">
-        <h1 className="text-6xl text-neutral-300 text-center font-semibold mb-2 leading-tight">
-          {title}
-        </h1>
-        <hr className="w-full mt-8 border-t mx-auto" />
+      <section className="max-w-screen-xl mx-auto w-11/12 flex flex-col items-center justify-center pt-32">
+        <h1 className="text-6xl text-neutral-300 text-center font-semibold mb-2 leading-tight">{title}</h1>
+        {/* <hr className="w-full mt-8 border-t mx-auto" />
         <div className="max-w-screen-lg w-full mx-auto py-8 flex items-center justify-between">
           <div className="flex gap-x-2 mb-2">
             {tags?.map((tag, i) => (
@@ -75,14 +64,9 @@ const Post: NextPage<ISlugProps> = ({
               </span>
             ))}
           </div>
-          <span className="text-sm  font-semibold text-center text-neutral-400 ">
-            {/* {formatDate('en-US', new Date(publishedAt))} */}
-          </span>
-          <span className="text-sm font-semibold text-center text-neutral-400">
-            {readingTime?.text}
-          </span>
+          <span className="text-sm font-semibold text-center text-neutral-400">{readingTime?.text}</span>
         </div>
-        <hr className="w-full border-t mx-auto" />
+        <hr className="w-full border-t mx-auto" /> */}
       </section>
       {/* <section className="my-8 mx-auto text-neutral-100 prose  prose-neutral prose-lg max-w-screen-lg">
         <MDXRemote {...source} components={MDXComponents} />

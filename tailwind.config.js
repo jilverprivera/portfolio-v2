@@ -14,10 +14,11 @@ module.exports = {
         primary: 'var(--color-primary)',
         'primary-variant-1': 'var(--color-primary-variant-1)',
         'primary-variant-2': 'var(--color-primary-variant-2)',
-        secondary: 'var(--color-secondary)'
+        secondary: 'var(--color-secondary)',
+        tertiary: 'var(--color-tertiary)'
       },
       fontFamily: {
-        sans: ['Inter', ...fontFamily.sans],
+        sans: ['IBM Plex Sans', ...fontFamily.sans],
         tomorrow: ['Tomorrow', ...fontFamily.sans]
       },
       screens: { '3xl': '1920px', ...screens }
