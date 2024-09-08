@@ -1,5 +1,5 @@
 import { type Metadata } from "next";
-import { getAllProjects } from "@/lib/projects";
+import { getAllProjects } from "@/utils/lib/projects";
 import SimpleLayout from "@/components/SimpleLayout";
 import { WorkCard } from "@/components/sections/projects/Work.card";
 

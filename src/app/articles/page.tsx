@@ -1,7 +1,7 @@
 import { Card } from "@/components/Card";
 import SimpleLayout from "@/components/SimpleLayout";
-import { ArticleWithSlug, getAllArticles } from "@/lib/article";
-import { formatDate } from "@/lib/formateDate";
+import { ArticleWithSlug, getAllArticles } from "@/utils/lib/article";
+import { formatDate } from "@/utils/lib/formateDate";
 
 const Article = ({ article }: { article: ArticleWithSlug }) => {
   return (

@@ -3,7 +3,7 @@
 import { useContext } from "react";
 import { useRouter } from "next/navigation";
 import { AppContext } from "@/app/providers";
-import { formatDate } from "@/lib/formateDate";
+import { formatDate } from "@/utils/lib/formateDate";
 import { ArticleWithSlug } from "@/interfaces/articles";
 import Container from "../Container";
 import { Prose } from "../Prose";

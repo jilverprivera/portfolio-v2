@@ -1,10 +1,8 @@
 import { Project, ProjectWithSlug } from "@/interfaces/projects";
 import glob from "fast-glob";
 
-export async function fetchProject(
-  projectFilename: string
-): Promise<ProjectWithSlug> {
-  let { project } = (await import(`../app/projects/${projectFilename}`)) as {
+async function fetchProject(projectFilename: string): Promise<ProjectWithSlug> {
+  let { project } = (await import(`../../app/projects/${projectFilename}`)) as {
     default: React.ComponentType;
     project: Project;
   };
