@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { cn } from "@/utils/lib/cn";
@@ -30,7 +30,10 @@ export const ParallaxScroll = ({
 
   return (
     <div
-      className={cn("h-screen items-start overflow-y-auto w-full rounded-lg", className)}
+      className={cn(
+        "h-screen items-start overflow-y-auto w-full rounded-lg",
+        className
+      )}
       ref={gridRef}
     >
       <div
@@ -43,45 +46,63 @@ export const ParallaxScroll = ({
               style={{ y: translateFirst }} // Apply the translateY motion value here
               key={"grid-1" + idx}
             >
-              <div className="cursor-pointer overflow-hidden group" onClick={() => console.log(el.title)}>
-                <Image
-                  src={el.image}
-                  className="w-full aspect-auto rounded-md gap-4 !m-0 !p-0 group-hover:scale-105 duration-150"
-                  height="480"
-                  width="680"
-                  objectFit="cover"
-                  alt="thumbnail"
-                />
-
-              </div>
+              <Suspense fallback={<div>Loading...</div>}>
+                <div
+                  className="cursor-pointer overflow-hidden group"
+                  onClick={() => console.log(el.title)}
+                >
+                  <Image
+                    src={el.image}
+                    className="w-full aspect-auto rounded-md gap-4 !m-0 !p-0 group-hover:scale-105 duration-150"
+                    height="480"
+                    width="680"
+                    objectFit="cover"
+                    alt="thumbnail"
+                  />
+                </div>
+              </Suspense>
             </motion.div>
           ))}
         </div>
         <div className="grid gap-4">
           {secondPart.map((el, idx) => (
             <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
-              <Image
-                src={el.image}
-                className="w-full aspect-auto rounded-md gap-4 !m-0 !p-0"
-                height="480"
-                width="680"
-                objectFit="cover"
-                alt="thumbnail"
-              />
+              <Suspense fallback={<div>Loading...</div>}>
+                <div
+                  className="cursor-pointer overflow-hidden group"
+                  onClick={() => console.log(el.title)}
+                >
+                  <Image
+                    src={el.image}
+                    className="w-full aspect-auto rounded-md gap-4 !m-0 !p-0 group-hover:scale-105 duration-150"
+                    height="480"
+                    width="680"
+                    objectFit="cover"
+                    alt="thumbnail"
+                  />
+                </div>
+              </Suspense>
             </motion.div>
           ))}
         </div>
         <div className="grid gap-4">
           {thirdPart.map((el, idx) => (
             <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
-              <Image
-                src={el.image}
-                className="w-full aspect-auto rounded-md gap-4 !m-0 !p-0"
-                height="480"
-                width="680"
-                objectFit="cover"
-                alt="thumbnail"
-              />
+              <Suspense fallback={<div>Loading...</div>}>
+                <div
+                  className="cursor-pointer overflow-hidden group"
+                  onClick={() => console.log(el.title)}
+                >
+                  <Image
+                    src={el.image}
+                    className="w-full aspect-auto rounded-md gap-4 !m-0 !p-0 group-hover:scale-105 duration-150"
+                    height="480"
+                    width="680"
+                    objectFit="cover"
+                    alt="thumbnail"
+                  />
+                </div>
+              </Suspense>
             </motion.div>
           ))}
         </div>
