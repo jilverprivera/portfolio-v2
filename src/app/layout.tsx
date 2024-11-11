@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Providers } from "./providers";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+import { Header, Footer } from "@/components/layout";
 import "./globals.css";
+import "highlight.js/styles/monokai-sublime.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
