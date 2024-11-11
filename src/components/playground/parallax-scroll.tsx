@@ -48,7 +48,7 @@ export const ParallaxScroll = ({
             >
               <Suspense fallback={<div>Loading...</div>}>
                 <div
-                  className="cursor-pointer overflow-hidden group"
+                  className="cursor-pointer overflow-hidden group rounded-md"
                   onClick={() => console.log(el.title)}
                 >
                   <Image
@@ -69,7 +69,7 @@ export const ParallaxScroll = ({
             <motion.div style={{ y: translateSecond }} key={"grid-2" + idx}>
               <Suspense fallback={<div>Loading...</div>}>
                 <div
-                  className="cursor-pointer overflow-hidden group"
+                  className="cursor-pointer overflow-hidden group rounded-md"
                   onClick={() => console.log(el.title)}
                 >
                   <Image
@@ -90,7 +90,7 @@ export const ParallaxScroll = ({
             <motion.div style={{ y: translateThird }} key={"grid-3" + idx}>
               <Suspense fallback={<div>Loading...</div>}>
                 <div
-                  className="cursor-pointer overflow-hidden group"
+                  className="cursor-pointer overflow-hidden group rounded-md"
                   onClick={() => console.log(el.title)}
                 >
                   <Image
