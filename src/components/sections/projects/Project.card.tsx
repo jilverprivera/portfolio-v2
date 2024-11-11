@@ -23,7 +23,7 @@ export const ProjectCard = ({
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start end", "start start"],
-    smooth: 10,
+    // smooth: 10,
   });
 
   const imageScale = useTransform(scrollYProgress, [0, 1], [1.25, 1]);

@@ -20,7 +20,7 @@ export const MainLayout = ({
           {intro}
         </p>
       </header>
-      {children && <div className="mt-16 sm:mt-20 w-full">{children}</div>}
+      {children && <div className="mt-12 w-full">{children}</div>}
     </Container>
   );
 };

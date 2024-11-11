@@ -1,5 +1,5 @@
 import { Card } from "@/components/Card";
-import {MainLayout} from "@/components/layout";
+import { MainLayout } from "@/components/layout";
 import { ArticleWithSlug } from "@/interfaces/articles";
 import { getAllArticles } from "@/utils/lib/article";
 import { formatDate } from "@/utils/lib/formateDate";
@@ -8,9 +8,7 @@ const Article = ({ article }: { article: ArticleWithSlug }) => {
   return (
     <article className="md:grid md:grid-cols-5 md:items-baseline">
       <Card className="md:col-span-4">
-        <Card.Title href={`/blog/${article.slug}`}>
-          {article.title}
-        </Card.Title>
+        <Card.Title href={`/blog/${article.slug}`}>{article.title}</Card.Title>
         <Card.Eyebrow
           as="time"
           dateTime={article.date}
@@ -42,7 +40,7 @@ export default async function ArticlePage() {
     >
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
         <div className="flex max-w-screen-2xl flex-col space-y-16">
-          {articles.map((article) => (
+          {articles.map((article: ArticleWithSlug) => (
             <Article key={article.slug} article={article} />
           ))}
         </div>
