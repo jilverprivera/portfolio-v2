@@ -1,22 +1,3 @@
-export const PAGES_DATA = [
-  {
-    name: "/",
-    link: "/",
-  },
-  {
-    name: "About",
-    link: "/about",
-  },
-  {
-    name: "Articles",
-    link: "/articles",
-  },
-  {
-    name: "Works",
-    link: "/works",
-  },
-];
-
 export const NETWORKS_DATA = [
   {
     title: "Github",

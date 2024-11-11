@@ -62,11 +62,11 @@ const DesktopNavigation = (props: React.ComponentPropsWithRef<"nav">) => {
   return (
     <nav {...props}>
       <ul className="fixed top-4 left-1/2 -translate-x-1/2  z-50 flex rounded-full bg-white/90 px-3 text-sm font-medium text-neutral-800 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur dark:bg-neutral-950/90 dark:text-neutral-200 dark:ring-white/10">
-        <NavItem href="/">/root</NavItem>
+        <NavItem href="/">/home</NavItem>
         <NavItem href="/about">About</NavItem>
-        <NavItem href="/playground">Playground</NavItem>
         <NavItem href="/works">Works</NavItem>
-        <NavItem href="/articles">Articles</NavItem>
+        <NavItem href="/blog">Blog</NavItem>
+        <NavItem href="/playground">Playground</NavItem>
       </ul>
     </nav>
   );
@@ -138,7 +138,7 @@ const MobileNavigation = (
               <ul className="-my-2 text-base text-neutral-800 dark:divide-neutral-100/5 dark:text-neutral-300">
                 <MobileNavItem href="/">Home</MobileNavItem>
                 <MobileNavItem href="/about">About</MobileNavItem>
-                <MobileNavItem href="/articles">Articles</MobileNavItem>
+                <MobileNavItem href="/blog">Blog</MobileNavItem>
               </ul>
             </nav>
           </Popover.Panel>

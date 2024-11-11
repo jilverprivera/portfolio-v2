@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { AppContext } from "@/app/providers";
 import { formatDate } from "@/utils/lib/formateDate";
 import { ArticleWithSlug } from "@/interfaces/articles";
-import { Container } from "./Container";
+import { Container } from "./container.component";
 import { Prose } from "../Prose";
 
 function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<"svg">) {

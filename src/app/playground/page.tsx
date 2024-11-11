@@ -4,7 +4,7 @@ const PlaygroundPage = () => {
   return (
     <MainLayout
       title="My passion, visual explorations"
-      intro="As a multi-disciplinary designer, I enjoy exploring various ways to visualize my creativity. Hover over to play my daily UI work, 3D motion graphics, and graphic designs."
+      intro="As an electronics engineer and programmer, I enjoy exploring various ways to develop my creativity. Mouse over to play some of my hobbies ranging from my work in web development, 3d development to animation and design."
     >
       <div>hola</div>
     </MainLayout>
