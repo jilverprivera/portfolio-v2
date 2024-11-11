@@ -36,5 +36,6 @@ body {
 @layer base {
   :root {
     --color-primary: #e7f451;
+    --color-primary-hover: #b6ca54;
   }
 }

@@ -106,7 +106,7 @@ export default function typographyStyles({ theme }: PluginUtils) {
 
         // Inline elements
         a: {
-          color: "var(--tw-prose-links)",
+          color: "var(--color-primary)",
           fontWeight: theme("fontWeight.semibold"),
           textDecoration: "underline",
           textDecorationColor: "var(--tw-prose-underline)",
@@ -115,8 +115,8 @@ export default function typographyStyles({ theme }: PluginUtils) {
           transitionTimingFunction: theme("transitionTimingFunction.in-out"),
         },
         "a:hover": {
-          color: "var(--tw-prose-links-hover)",
-          textDecorationColor: "var(--tw-prose-underline-hover)",
+          color: "var(--color-primary-hover)",
+          textDecorationColor: "var(--color-primary-hover)",
         },
         strong: {
           color: "var(--tw-prose-bold)",

@@ -34,7 +34,7 @@ export const ProjectCard = ({
       ref={container}
       className="h-screen flex justify-center items-center sticky top-0"
     >
-      <Link href={`/projects/${project.slug}`}>
+      <Link href={`/works/${project.slug}`}>
         <motion.div
           style={{ top: `calc(${index * 24}px)`, scale }}
           className="w-full flex flex-col items-center justify-center relative rounded-xl p-2 origin-top border border-neutral-700 bg-neutral-900"

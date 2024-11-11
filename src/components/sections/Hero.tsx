@@ -19,13 +19,10 @@ const Hero = () => {
       className="relative min-h-screen w-full max-w-screen-2xl mx-auto pt-24"
     >
       <h1 className="text-4xl w-5/6 font-bold tracking-tight leading-none text-neutral-800 sm:text-[8.25rem] dark:text-neutral-100">
-        Software developer, Electronic engineer, and quick learner.
+        Software developer, Electronic engineer, and <span className="text-primary">3d</span> enthusiast.
       </h1>
       <p className="mt-12 w-3/5 text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">
-        I’m John Doe, a software Engineer and entrepreneur . Lorem ipsum dolor
-        sit amet consectetur adipisicing elit. Unde, veniam vel officiis impedit
-        et dolorum quasi est labore! Maxime quae magnam mollitia nobis. Aut,
-        alias?.
+        I’m Jilver, a software developer and electronic engineer. Currently based on Bucaramanga, Colombia, I enjoy working on projects that combine the best of both worlds. I love creating beautiful and functional user interfaces, and I’m always looking for ways to improve the user experience.
       </p>
     </motion.div>
   );

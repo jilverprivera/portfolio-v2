@@ -1,8 +1,8 @@
 "use client";
 
 /* eslint-disable react/no-unescaped-entities */
+import { Container } from "@/components/layout";
 import { Button } from "@/components/Button";
-import Container from "@/components/Container";
 import { useRouter } from "next/navigation";
 
 const NotFound = () => {

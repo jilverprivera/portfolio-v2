@@ -62,10 +62,11 @@ const DesktopNavigation = (props: React.ComponentPropsWithRef<"nav">) => {
   return (
     <nav {...props}>
       <ul className="fixed top-4 left-1/2 -translate-x-1/2  z-50 flex rounded-full bg-white/90 px-3 text-sm font-medium text-neutral-800 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur dark:bg-neutral-950/90 dark:text-neutral-200 dark:ring-white/10">
-        <NavItem href="/">/</NavItem>
+        <NavItem href="/">/root</NavItem>
         <NavItem href="/about">About</NavItem>
+        <NavItem href="/playground">Playground</NavItem>
+        <NavItem href="/works">Works</NavItem>
         <NavItem href="/articles">Articles</NavItem>
-        <NavItem href="/projects">Projects</NavItem>
       </ul>
     </nav>
   );
@@ -147,7 +148,7 @@ const MobileNavigation = (
   );
 };
 
-const Header = () => {
+export const Header = () => {
   return (
     <header className="top-0 -mb-3 py-5 w-full mx-auto px-4 md:px-10 flex gap-10 justify-between items-center">
       <DesktopNavigation className="pointer-events-auto hidden md:block" />
@@ -156,4 +157,3 @@ const Header = () => {
   );
 };
 
-export default Header;

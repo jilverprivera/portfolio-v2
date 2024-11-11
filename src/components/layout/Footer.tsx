@@ -4,7 +4,7 @@ import { useState } from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { NETWORKS_DATA } from "@/utils/data/data";
 
-const Footer = (): JSX.Element => {
+export const Footer = (): JSX.Element => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   return (
     <footer className="w-full py-12">
@@ -35,4 +35,3 @@ const Footer = (): JSX.Element => {
   );
 };
 
-export default Footer;

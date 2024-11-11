@@ -1,7 +1,7 @@
 import React from "react";
-import Container from "./Container";
+import { Container } from "./Container";
 
-const SimpleLayout = ({
+export const MainLayout = ({
   title,
   intro,
   children,
@@ -24,5 +24,3 @@ const SimpleLayout = ({
     </Container>
   );
 };
-
-export default SimpleLayout;

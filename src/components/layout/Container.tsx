@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 
-const Container = ({
+export const Container = ({
   children,
   className,
 }: {
@@ -15,4 +15,3 @@ const Container = ({
   );
 };
 
-export default Container;

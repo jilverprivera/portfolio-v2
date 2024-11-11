@@ -12,8 +12,8 @@ export const PAGES_DATA = [
     link: "/articles",
   },
   {
-    name: "Projects",
-    link: "/projects",
+    name: "Works",
+    link: "/works",
   },
 ];
 

@@ -27,7 +27,7 @@ export const WorkCard = ({
   const [isActive, setIsActive] = useState(false);
   return (
     <Link
-      href={`/projects/${slug}`}
+      href={`/works/${slug}`}
       onMouseEnter={() => setIsActive(true)}
       onMouseLeave={() => setIsActive(false)}
       className="w-full relative py-12 flex items-center justify-center text-neutral-300 border-t border-neutral-700"
