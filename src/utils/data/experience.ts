@@ -5,9 +5,10 @@ export const EXPERIENCE_DATA = [
     date: ["01/04/2024 - Current"],
     url: "https://www.uncierre.com/",
     description:
-      "is a company that is revolutionizing the way of selling in the real estate market, facilitating the work of the sales team and back-office, providing a better service to customers. I am currently part of the development team of the 'Uncierre' project, which is the platform where real estate deals are closed.",
+      "is a company that is changing the way of selling in the real estate market, facilitating the work of the sales team and the back-office. Currently, I am part of the development team of the 'Uncierre' project, which is the platform where real estate transactions are closed.",
     stack: [
       "GraphQL",
+      "AWS",
       "CQRS pattern",
       "Event-Driven Architecture",
       "Hexagonal Architecture",
@@ -18,6 +19,7 @@ export const EXPERIENCE_DATA = [
       "Knex",
       "Docker",
       "Redux",
+      "Zustand",
       "NPM packages",
       "Microservices",
       "RabbitMQ",

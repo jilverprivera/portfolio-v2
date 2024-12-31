@@ -30,6 +30,15 @@ import { FaChevronDown } from "react-icons/fa";
 //   );
 // };
 
+const NAV_ITEMS = [
+  { href: "/", label: "Home" },
+  { href: "/works", label: "Work" },
+  { href: "/stack", label: "Stack" },
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
+  { href: "/playground", label: "Playground" },
+];
+
 const NavItem = ({
   href,
   children,
@@ -62,11 +71,11 @@ const DesktopNavigation = (props: React.ComponentPropsWithRef<"nav">) => {
   return (
     <nav {...props}>
       <ul className="fixed top-4 left-1/2 -translate-x-1/2  z-50 flex rounded-full bg-white/90 px-3 text-sm font-medium text-neutral-800 shadow-lg shadow-neutral-800/5 ring-1 ring-neutral-900/5 backdrop-blur dark:bg-neutral-950/90 dark:text-neutral-200 dark:ring-white/10">
-        <NavItem href="/">/home</NavItem>
-        <NavItem href="/about">About</NavItem>
-        <NavItem href="/works">Works</NavItem>
-        <NavItem href="/blog">Blog</NavItem>
-        <NavItem href="/playground">Playground</NavItem>
+        {NAV_ITEMS.map((item) => (
+          <NavItem key={item.href} href={item.href}>
+            {item.label}
+          </NavItem>
+        ))}
       </ul>
     </nav>
   );
@@ -136,9 +145,11 @@ const MobileNavigation = (
             </div>
             <nav className="mt-6">
               <ul className="-my-2 text-base text-neutral-800 dark:divide-neutral-100/5 dark:text-neutral-300">
-                <MobileNavItem href="/">Home</MobileNavItem>
-                <MobileNavItem href="/about">About</MobileNavItem>
-                <MobileNavItem href="/blog">Blog</MobileNavItem>
+                {NAV_ITEMS.map((item) => (
+                  <MobileNavItem key={item.href} href={item.href}>
+                    {item.label}
+                  </MobileNavItem>
+                ))}
               </ul>
             </nav>
           </Popover.Panel>
@@ -156,4 +167,3 @@ export const Header = () => {
     </header>
   );
 };
-

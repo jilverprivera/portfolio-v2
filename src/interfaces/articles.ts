@@ -4,6 +4,7 @@ export interface Article {
   tags: string[];
   date: string;
   readingTime: string;
+  finished: boolean;
 }
 
 export interface ArticleWithSlug extends Article {

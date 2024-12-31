@@ -4,8 +4,7 @@ import Hero from "@/components/sections/Hero";
 import { Projects } from "@/components/sections/Projects";
 
 export default async function Home() {
-  let articles = (await getAllArticles()).slice(0, 3);
-  let projects = (await getAllProjects()).slice(0, 4);
+  const projects = (await getAllProjects()).slice(0, 4).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <main>

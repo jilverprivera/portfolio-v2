@@ -27,8 +27,8 @@ export const Projects = ({ projects }: { projects: ProjectWithSlug[] }) => {
       ref={container}
       className="max-w-screen-2xl w-11/12 mx-auto flex flex-col items-center justify-center"
     >
-      <h2 className="text-[8.8rem] flex uppercase tracking-tighter font-semibold text-neutral-200 relative pr-36">
-        <span>Selected projects </span>
+      <h2 className="text-[10rem] flex uppercase tracking-tighter font-semibold text-neutral-200 relative pr-36">
+        <span>Latest projects </span>
         <span className="text-7xl absolute top-10 right-12">
           ({projects.length})
         </span>

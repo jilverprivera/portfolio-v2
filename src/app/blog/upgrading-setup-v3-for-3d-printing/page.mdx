@@ -1,23 +1,22 @@
-export const project = {
-  title: "IoTouch",
-  thumbnail: "cover.png",
-  category: "Side project",
-  position: ["Software Developer"],
+import { ArticleLayout } from "@/components/layout";
+
+export const article = {
+  title: "Updating my setup to V2 with Mac Mini M4 and Gaming Tower",
   description:
     "When we released the first version of cosmOS last year, it was written in Go. Go is a wonderful programming language, but it’s been a while since I’ve seen an article on the front page of Hacker News about rewriting some important tool in Go and I see articles on there about rewriting things in Rust every single week.",
-  date: "2022-07-14",
-  tags: ["IoT", "Hardware prototyping", "Web development"],
-  technologies: ["Next.js", "Supabase", "Micropython", "Arduino", "TypeScript"],
+  date: "2025-04-31",
+  finished: false,
+};
+export const metadata = {
+  title: article.title,
+  description: article.description,
 };
 
-export const metadata = {
-  title: project.title,
-  description: project.description,
-};
+export default (props) => <ArticleLayout article={article} {...props} />;
 
 When we released the first version of cosmOS last year, it was written in Go. Go is a wonderful programming language with a lot of benefits, but it’s been a while since I’ve seen an article on the front page of Hacker News about rewriting some important tool in Go and I see articles on there about rewriting things in Rust every single week.
 
-```rust
+```javascript
 use ferris_says::say;
 use std::io::{stdout, BufWriter};
 
@@ -48,7 +47,7 @@ dotibus ora, et findi huic invenit; fatis? Fractaque dare superinposita
 nimiumque simulatoremque sanguine, at voce aestibus diu! Quid veterum hausit tu
 nil utinam paternos ima, commentaque.
 
-```c
+```javascript
 exbibyte_wins = gigahertz(3);
 grayscaleUtilityClient = control_uat;
 pcmciaHibernate = oop_virus_console(text_mountain);
